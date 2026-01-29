@@ -1,0 +1,11 @@
+services:
+  kalshi-api:
+    container_name: kalshi-api
+    image: kalshi-service:latest
+    build: .
+    env_file:
+        - .env
+    volumes:
+      - ./secrets:/secrets:ro
+    ports:
+      - "8080:8080"
